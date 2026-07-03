@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DD Création — Conception & impression 3D sur mesure</title>
+  <meta name="description" content="DD Création, atelier d'impression 3D tenu par Lorito André. Envoyez votre fichier STL, nous l'imprimons. Conception d'objets 3D sur mesure.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">DD</span>
+        <span class="logo-name">DD <span>Création</span></span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="paiement.html">Tarifs & paiement</a></li>
+        <li><a href="contact.html" class="nav-cta">Envoyer un fichier STL</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Bannière -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow">; atelier d'impression 3D — France</span>
+        <h1>Vos idées, imprimées <em>couche par couche</em>.</h1>
+        <p class="lead">
+          DD Création conçoit et imprime vos objets en 3D : envoyez-nous votre
+          fichier STL, ou décrivez simplement votre projet — nous nous occupons
+          de la modélisation et de l'impression.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Envoyer mon fichier STL</a>
+          <a href="galerie.html" class="btn btn-ghost">Voir nos réalisations</a>
+        </div>
+        <p class="owner" style="margin-top:28px;">Atelier tenu par <strong>Lorito André</strong></p>
+      </div>
+
+      <!-- Signature : impression animée -->
+      <div class="printer-stage" aria-hidden="true">
+        <div class="print-object" id="printObject"></div>
+        <div class="print-bed"></div>
+        <p class="print-caption">; impression en cours… PLA · 0,2 mm/couche</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">; nos services</span>
+        <h2>De la modélisation à l'objet fini</h2>
+        <p>Que vous ayez déjà un fichier prêt à imprimer ou seulement une idée, nous vous accompagnons à chaque étape.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">🖨️</div>
+          <h3>Impression de vos fichiers STL</h3>
+          <p>Vous avez un fichier STL ? Envoyez-le via notre formulaire : nous vérifions sa faisabilité, l'imprimons avec soin et vous le livrons.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✏️</div>
+          <h3>Conception 3D sur mesure</h3>
+          <p>Pas de fichier ? Aucun problème. Décrivez votre besoin (croquis, photo, cotes…) et nous modélisons l'objet pour vous, de A à Z.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🔧</div>
+          <h3>Pièces de réparation</h3>
+          <p>Bouton cassé, clip introuvable, pièce d'électroménager obsolète ? Nous recréons la pièce manquante pour prolonger la vie de vos objets.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Étapes -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">; comment ça marche</span>
+        <h2>Un processus simple, en 4 étapes</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">; G28 — étape 1</span>
+          <h3>Vous nous contactez</h3>
+          <p>Via le formulaire, avec votre fichier STL ou la description de votre projet.</p>
+        </div>
+        <div class="step">
+          <span class="num">; G29 — étape 2</span>
+          <h3>Nous étudions</h3>
+          <p>Analyse du fichier, choix du matériau et de la finition, puis devis gratuit sous 48 h.</p>
+        </div>
+        <div class="step">
+          <span class="num">; G1 — étape 3</span>
+          <h3>Nous imprimons</h3>
+          <p>Impression soignée, contrôle qualité couche par couche et post-traitement si besoin.</p>
+        </div>
+        <div class="step">
+          <span class="num">; M84 — étape 4</span>
+          <h3>Vous recevez</h3>
+          <p>Remise en main propre ou expédition soignée de votre objet fini.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bandeau CTA -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Un projet en tête ?</h2>
+          <p>Envoyez-nous votre fichier STL ou votre idée : devis gratuit et sans engagement.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Démarrer mon projet</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color:#fff;">
+          <span class="logo-mark">DD</span>
+          <span class="logo-name">DD <span style="color:var(--accent);">Création</span></span>
+        </a>
+        <p>Atelier de conception et d'impression 3D tenu par Lorito André. Vos idées prennent forme, couche par couche.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="paiement.html">Tarifs & paiement</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:Ludo72539@gmail.com">Ludo72539@gmail.com</a></li>
+          <li>Lorito André</li>
+          <li>Réponse sous 48 h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 DD Création — Tous droits réservés</span>
+      <span>; end_of_print — merci de votre visite</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

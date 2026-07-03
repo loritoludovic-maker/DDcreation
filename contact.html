@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & envoi de fichier STL — DD Création</title>
+  <meta name="description" content="Contactez DD Création : envoyez votre fichier STL ou décrivez votre projet d'impression 3D. Devis gratuit sous 48 h.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">DD</span>
+        <span class="logo-name">DD <span>Création</span></span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="paiement.html">Tarifs & paiement</a></li>
+        <li><a href="contact.html" class="nav-cta active">Envoyer un fichier STL</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">; contact</span>
+      <h1>Parlez-nous de votre projet</h1>
+      <p>Joignez votre fichier STL si vous en avez un, ou décrivez simplement ce que vous souhaitez : nous revenons vers vous avec un devis gratuit sous 48 h.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container form-wrap">
+
+      <!--
+        Le formulaire utilise FormSubmit (https://formsubmit.co) : les messages
+        ET les pièces jointes (fichier STL) sont envoyés directement à l'adresse
+        Ludo72539@gmail.com, sans serveur à gérer.
+        À la première soumission, FormSubmit enverra un e-mail de confirmation
+        à cette adresse : il suffit de cliquer sur le lien pour activer le formulaire.
+      -->
+      <form class="form-card" action="https://formsubmit.co/Ludo72539@gmail.com" method="POST" enctype="multipart/form-data">
+
+        <!-- Réglages FormSubmit -->
+        <input type="hidden" name="_subject" value="Nouvelle demande — DD Création">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <!-- Remplacer VOTRE-SITE.fr par l'adresse réelle du site une fois en ligne : -->
+        <input type="hidden" name="_next" value="merci.html">
+
+        <div class="field">
+          <label for="nom">Nom et prénom *</label>
+          <input type="text" id="nom" name="Nom" required autocomplete="name" placeholder="Ex. : Marie Dupont">
+        </div>
+
+        <div class="field">
+          <label for="email">Adresse e-mail *</label>
+          <input type="email" id="email" name="Email" required autocomplete="email" placeholder="vous@exemple.fr">
+        </div>
+
+        <div class="field">
+          <label for="tel">Téléphone <span class="hint">(facultatif)</span></label>
+          <input type="tel" id="tel" name="Téléphone" autocomplete="tel" placeholder="06 12 34 56 78">
+        </div>
+
+        <div class="field">
+          <label for="type">Type de demande *</label>
+          <select id="type" name="Type de demande" required>
+            <option value="" disabled selected>Choisissez…</option>
+            <option>Impression d'un fichier STL que je fournis</option>
+            <option>Conception 3D sur mesure (je n'ai pas de fichier)</option>
+            <option>Pièce de réparation</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Votre message *</label>
+          <textarea id="message" name="Message" required placeholder="Décrivez votre projet : dimensions, couleur, quantité, délai souhaité…"></textarea>
+        </div>
+
+        <div class="field">
+          <label>Fichier STL <span class="hint">(facultatif — formats .stl, .obj, .3mf, .step · 10 Mo max)</span></label>
+          <label class="dropzone" id="dropzone" tabindex="0">
+            <div class="dz-icon">📦</div>
+            <div><strong>Cliquez pour joindre votre fichier</strong> ou glissez-le ici</div>
+            <div class="dz-file" id="dzFile">Aucun fichier sélectionné</div>
+            <input type="file" id="fichier" name="attachment" accept=".stl,.obj,.3mf,.step,.stp">
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+          Envoyer ma demande
+        </button>
+      </form>
+
+      <aside class="info-card">
+        <h3>Informations pratiques</h3>
+        <ul>
+          <li><span class="k">E-mail</span> <a href="mailto:Ludo72539@gmail.com">Ludo72539@gmail.com</a></li>
+          <li><span class="k">Contact</span> Lorito André</li>
+          <li><span class="k">Devis</span> Gratuit, réponse sous 48 h</li>
+          <li><span class="k">Fichiers</span> STL, OBJ, 3MF, STEP</li>
+          <li><span class="k">Matériaux</span> PLA, PETG (autres sur demande)</li>
+          <li><span class="k">Astuce</span> Fichier trop volumineux ? Envoyez-le directement par e-mail ou via un lien de partage (WeTransfer, Drive…).</li>
+        </ul>
+      </aside>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color:#fff;">
+          <span class="logo-mark">DD</span>
+          <span class="logo-name">DD <span style="color:var(--accent);">Création</span></span>
+        </a>
+        <p>Atelier de conception et d'impression 3D tenu par Lorito André. Vos idées prennent forme, couche par couche.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="paiement.html">Tarifs & paiement</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:Ludo72539@gmail.com">Ludo72539@gmail.com</a></li>
+          <li>Lorito André</li>
+          <li>Réponse sous 48 h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 DD Création — Tous droits réservés</span>
+      <span>; end_of_print — merci de votre visite</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

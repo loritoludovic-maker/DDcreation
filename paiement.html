@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs & paiement — DD Création</title>
+  <meta name="description" content="Tarifs indicatifs et paiement sécurisé pour vos impressions 3D chez DD Création.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">DD</span>
+        <span class="logo-name">DD <span>Création</span></span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="paiement.html" class="active">Tarifs & paiement</a></li>
+        <li><a href="contact.html" class="nav-cta">Envoyer un fichier STL</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">; tarifs & paiement</span>
+      <h1>Des tarifs simples et transparents</h1>
+      <p>Chaque projet est unique : les prix ci-dessous sont indicatifs. Le devis exact vous est confirmé par e-mail avant tout paiement.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Formules indicatives -->
+      <div class="pricing">
+        <article class="price-card">
+          <h3>Petite pièce</h3>
+          <div class="price">dès 8 €<small> / pièce</small></div>
+          <p class="price-note">Porte-clés, clips, petits objets &lt; 50 g</p>
+          <ul>
+            <li>Impression de votre fichier STL</li>
+            <li>PLA, coloris au choix</li>
+            <li>Contrôle qualité inclus</li>
+          </ul>
+          <a href="contact.html" class="btn btn-dark" style="justify-content:center;">Demander un devis</a>
+        </article>
+
+        <article class="price-card featured">
+          <span class="badge">Le plus demandé</span>
+          <h3>Objet sur mesure</h3>
+          <div class="price">dès 25 €<small> / projet</small></div>
+          <p class="price-note">Conception 3D + impression comprise</p>
+          <ul>
+            <li>Modélisation à partir de votre idée</li>
+            <li>Un aller-retour de modification inclus</li>
+            <li>PLA ou PETG, finition soignée</li>
+            <li>Fichier STL remis avec l'objet</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="justify-content:center;">Demander un devis</a>
+        </article>
+
+        <article class="price-card">
+          <h3>Pièce technique / série</h3>
+          <div class="price">Sur devis</div>
+          <p class="price-note">Pièces de réparation, prototypes, petites séries</p>
+          <ul>
+            <li>Étude de faisabilité</li>
+            <li>Matériaux techniques (PETG…)</li>
+            <li>Tarif dégressif en quantité</li>
+          </ul>
+          <a href="contact.html" class="btn btn-dark" style="justify-content:center;">Demander un devis</a>
+        </article>
+      </div>
+
+      <!-- Module de paiement -->
+      <div class="form-wrap">
+        <div class="form-card">
+          <span class="eyebrow">; paiement sécurisé</span>
+          <h2 style="font-family:var(--font-display); font-size:26px; margin-bottom:6px;">Régler mon devis</h2>
+          <p style="color:var(--ink-soft); font-size:15px; margin-bottom:24px;">
+            Indiquez la référence figurant sur votre devis, puis procédez au paiement.
+          </p>
+
+          <form id="paymentForm">
+            <div class="field">
+              <label for="ref">Référence du devis *</label>
+              <input type="text" id="ref" name="reference" required placeholder="Ex. : DD-2026-014">
+            </div>
+            <div class="field">
+              <label for="montant">Montant à régler (€) *</label>
+              <input type="text" id="montant" name="montant" required inputmode="decimal" placeholder="Ex. : 25,00">
+            </div>
+            <div class="field">
+              <label for="payeur">Nom du payeur *</label>
+              <input type="text" id="payeur" name="payeur" required autocomplete="name" placeholder="Ex. : Marie Dupont">
+            </div>
+
+            <!-- ==========================================================
+                 ZONE D'INTÉGRATION DU PRESTATAIRE DE PAIEMENT
+                 ==========================================================
+                 C'est ICI que s'insèrera le module bancaire choisi.
+                 Deux options courantes, au choix :
+
+                 1) STRIPE (carte bancaire) :
+                    - Inclure <script src="https://js.stripe.com/v3/"></script>
+                    - Remplacer le bouton ci-dessous par le Payment Element
+                      Stripe, initialisé avec la clé publique du compte.
+
+                 2) PAYPAL :
+                    - Inclure le SDK :
+                      <script src="https://www.paypal.com/sdk/js?client-id=VOTRE_CLIENT_ID&currency=EUR"></script>
+                    - Remplacer le bouton ci-dessous par :
+                      <div id="paypal-button-container"></div>
+                      puis paypal.Buttons({...}).render('#paypal-button-container');
+
+                 Le formulaire ci-dessus (référence, montant, payeur) est
+                 déjà prêt à alimenter l'un ou l'autre.
+                 ========================================================== -->
+            <div id="payment-provider-slot"></div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              🔒 Payer en toute sécurité
+            </button>
+          </form>
+
+          <div class="pay-note">
+            <span aria-hidden="true">🔒</span>
+            <span>Le module de paiement en ligne est en cours d'activation. En attendant, le règlement s'effectue par virement ou à la remise de l'objet — les instructions figurent sur votre devis.</span>
+          </div>
+        </div>
+
+        <aside class="info-card">
+          <h3>Bon à savoir</h3>
+          <ul>
+            <li><span class="k">Devis</span> Toujours gratuit et validé par e-mail avant paiement</li>
+            <li><span class="k">Acompte</span> 50 % à la commande pour les projets sur mesure</li>
+            <li><span class="k">Moyens</span> Carte bancaire, PayPal, virement (selon activation)</li>
+            <li><span class="k">Sécurité</span> Aucune donnée bancaire n'est stockée sur ce site</li>
+            <li><span class="k">Question ?</span> <a href="mailto:Ludo72539@gmail.com">Ludo72539@gmail.com</a></li>
+          </ul>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color:#fff;">
+          <span class="logo-mark">DD</span>
+          <span class="logo-name">DD <span style="color:var(--accent);">Création</span></span>
+        </a>
+        <p>Atelier de conception et d'impression 3D tenu par Lorito André. Vos idées prennent forme, couche par couche.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="paiement.html">Tarifs & paiement</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:Ludo72539@gmail.com">Ludo72539@gmail.com</a></li>
+          <li>Lorito André</li>
+          <li>Réponse sous 48 h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 DD Création — Tous droits réservés</span>
+      <span>; end_of_print — merci de votre visite</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
